@@ -1,7 +1,7 @@
 export const BM = {
  'VENUE EXPLORER':'PENEROKA RUANG ACARA','LEVEL 2':'ARAS 2',
  'Hall 1 Dewan Tun Hussein Onn':'Dewan 1 Tun Hussein Onn',
- 'A WORLD OF OPPORTUNITY':'DUNIA PENUH PELUANG','RIGHT TIME, RIGHT NOW.':'MASA YANG TEPAT, SEKARANG.',
+ 'A WORLD OF OPPORTUNITY':'A WORLD OF OPPORTUNITY','RIGHT TIME, RIGHT NOW.':'RIGHT TIME, RIGHT NOW.',
  'Venue reference':'Rujukan dewan','MAKE IT YOUR OCCASION':'CIPTA ACARA PILIHAN ANDA','Explore the setting':'Terokai susun atur',
  'Conference':'Persidangan','Ideas take centre stage':'Ruang untuk perkongsian idea',
  'Theatre':'Teater','A shared perspective':'Pengalaman bersama',
