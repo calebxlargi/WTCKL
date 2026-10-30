@@ -80,6 +80,10 @@ function renderAdjustmentControls(){
 }
 let layoutFrame=null;
 function scheduleLayoutUpdate(){if(layoutFrame!==null)cancelAnimationFrame(layoutFrame);layoutFrame=requestAnimationFrame(()=>{layoutFrame=null;buildLayout(currentLayout)})}
+const controlToggle=document.querySelector('#toggle-controls');
+function toggleMobileControls(open){document.querySelector('#app').classList.toggle('controls-open',open);controlToggle.setAttribute('aria-expanded',String(open));controlToggle.querySelector('span').textContent=open?'Done · Back to 3D':'Adjust layout';}
+controlToggle.onclick=()=>toggleMobileControls(controlToggle.getAttribute('aria-expanded')!=='true');
+document.addEventListener('keydown',event=>{if(event.key==='Escape')toggleMobileControls(false)});
 document.querySelector('#restore-layout').onclick=()=>{layoutSettings[currentLayout]=createLayoutSettings()[currentLayout];renderAdjustmentControls();buildLayout(currentLayout)};
 let activeView='interior',tween=null;const views={interior:{pos:[-8.8,3.4,18.5],target:[1,2.5,-8]},stage:{pos:[0,2.6,-17],target:[0,2.3,8]},rear:{pos:[-9,5.5,20],target:[1,2,-6]},overhead:{pos:[0,49,17],target:[0,0,0]}};
 function setView(name,instant=false){activeView=name;const v=views[name];ceiling.visible=name!=='overhead';architecture.children.filter(o=>o!==ceiling&&o.isMesh&&o.geometry.parameters?.height>6).forEach(o=>o.visible=name!=='overhead');controls.enableRotate=name!=='overhead';controls.enablePan=name!=='overhead';controls.minDistance=name==='overhead'?32:2;controls.maxDistance=name==='overhead'?57:45;if(name!=='overhead')confineInteriorCamera(camera.position,controls.target);if(instant){camera.position.fromArray(v.pos);controls.target.fromArray(v.target)}else tween={start:performance.now(),from:camera.position.clone(),to:new THREE.Vector3(...v.pos),fromTarget:controls.target.clone(),toTarget:new THREE.Vector3(...v.target)};document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===name));document.querySelector('#view-label').textContent='THE BALLROOM · '+({interior:'INTERIOR VIEW',stage:'FROM THE STAGE',rear:'WIDE ANGLE',overhead:'FLOOR PLAN'}[name]);}
