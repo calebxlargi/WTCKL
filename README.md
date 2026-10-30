@@ -50,3 +50,16 @@ If using a Cloudflare account that already has a Pages project, connect this rep
 - Interface fonts load from Google Fonts, with local system fallbacks. Room geometry, materials, branding and reference imagery are served by the site itself.
 
 Cloudflare documentation: https://developers.cloudflare.com/pages/configuration/build-configuration/
+
+## Adjustable layouts
+
+Each setting has synchronized sliders and number inputs. Values are retained while switching settings during the current visit; Restore default layout resets only the current setting.
+
+| Setting | Adjustable quantities |
+| --- | --- |
+| Banquet | 1–32 tables, 2–10 chairs per table |
+| Conference | 1–60 tables, 1–3 chairs per table |
+| Theatre | 1–26 rows, 2–24 chairs per row |
+| Buffet | 1–24 dining tables, 2–10 chairs per table, 1–4 serving stations |
+
+The displayed guest count always follows the rendered chair count. Table spacing is preserved as counts change; incomplete rows are centred. Limits describe this illustrative model, not approved venue capacity.
