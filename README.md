@@ -45,7 +45,7 @@ If using a Cloudflare account that already has a Pages project, connect this rep
 - Four LED positions follow the supplied annotated floor plan.
 - WTC logo is cropped directly from the supplied PDF.
 - Official reference photograph: https://worldtradecentrekl.com/wp-content/uploads/2026/02/WTCKL_THO_01-scaled.jpg
-- Illustrative chair counts: conference **180**, theatre **624**, banquet **256**, buffet **192**. These are modelled chair counts, not certified venue capacities.
+- Illustrative chair counts: conference **180**, theatre **624**, banquet **320** (10 per table), buffet **192**. These are modelled chair counts, not certified venue capacities.
 - Architecture and furniture are approximate reconstructions from photographs. This version is a real-time architectural visualisation, not a surveyed digital twin.
 - Interface fonts load from Google Fonts, with local system fallbacks. Room geometry, materials, branding and reference imagery are served by the site itself.
 
